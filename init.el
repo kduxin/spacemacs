@@ -32,3 +32,23 @@
   (spacemacs/setup-startup-hook)
   (require 'server)
   (unless (server-running-p) (server-start)))
+
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+(add-to-list 'load-path "~/.emacs.d/lisp/cnfonts")
+(add-to-list 'load-path "~/.emacs.d/cnfonts")
+
+
+
+
+
+;; cnfonts
+(require 'cnfonts)
+;; 让 cnfonts 随着 Emacs 自动生效。
+(cnfonts-enable)
+;; 让 spacemacs mode-line 中的 Unicode 图标正确显示。
+(cnfonts-set-spacemacs-fallback-fonts)
+
+;; org mode customization
+(setq org-todo-keywords
+      '((sequence "TODO" "PROCESSING" "HAND" "|" "DONE")))
+(setq org-startup-indented t)
